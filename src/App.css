@@ -1,3 +1,7 @@
+body{
+  background-color: #31c251;
+  color: #37599c;
+}
 .App {
   text-align: center;
 }
@@ -19,4 +23,94 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.main-div{
+  margin: 0 auto;
+  width: 30%;
+  text-align: center;
+  background-color: #17b8b8;
+
+  -webkit-box-shadow: 0px 0px 20px 10px  #10e8a0;
+  -moz-box-shadow: 0px 0px 20px 10px  #10e8a0;
+  box-shadow: 0px 0px 20px 10px #10e8a0;
+}
+
+.about_text{
+  margin: 0 15px 25px;
+  font-size: 18px;
+}
+.about_text h1{
+  margin: 0;
+}
+
+.form_city{
+  display: inline-block;
+  width: 60%;
+  background-color: green;
+  padding: 15px 20px 5px;
+}
+.form_city form input{
+  height: 20px;
+  padding-left: 5px;
+  margin-bottom: 20px;
+  background-color: #1fb433;
+  border: 1px dashed blue;
+  color: #090ddd;
+  font-size: 16px;
+  width: 100%;
+  font-weight: 600;
+}
+
+.form_city form button{
+  background-color: #1fb433;
+  border: 1px dashed blue;
+  padding: 5px 15px;
+  color: #b9df0d;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.weatherInfo{
+  color: #090ddd;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.weatherInfo p{
+  margin: 0;
+  padding: 0;
+}
+
+.weatherInfo img{
+  display: block;
+  margin-left: 30px;
+  padding: 0;
+}
+
+.weather-List{
+  list-style: none;
+}
+
+.weather-List li{
+  display: inline-block;
+  border: 1px solid blue;
+  min-width: 200px;
+  min-height: 200px;
+  vertical-align: top;
+  margin-bottom: 10px;
+  padding: 10px;
+  margin-right: 25px;
+  text-align: left;
+}
+
+.weather-List button{
+  background-color: #1fb433;
+  border: 1px dashed blue;
+  padding: 5px 10px;
+  color: #b9df0d;
+  font-size: 16px;
+  margin-left: 10px;
+  font-weight: 600;
+  float: right;
 }
