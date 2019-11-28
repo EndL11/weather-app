@@ -1,10 +1,9 @@
 import React from "react";
 
 const Weather = props => {
-
     var itemList = props.items.map(item => (
         <li key = {item.id}>   
-            <button onClick = {props.deleteItem}>X</button>     
+            <button onClick = {() => props.deleteItem(item.id)}>X</button>     
             <p>Місто: {item.city.charAt(0).toUpperCase() + item.city.slice(1)}, {item.sys.country}</p>
             <p>Температура: {Math.trunc(item.temp.temp)} градусів</p>
             <p>Тиск: {item.pressure}</p>

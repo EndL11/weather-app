@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import {About, Lesson4, SomeText, Form, Items, RegisterForm, SuccessRegister} from "./components";
+import {About, Lesson4, SomeText, Form, RegisterForm, SuccessRegister, Weather} from "./components";
 
 const API_KEY = "3042b9bfd374130956c1e55d218c8156";
 
@@ -123,18 +123,22 @@ class WeatherApp extends React.Component{
   }
 
   render(){
-    if(this.state.isAgree === false){
       return(
 
         <div className = "main-div">
           <About/>
           <Form gettingData = {this.getData} />
           <br/>
-          <Items items = {this.state.items} error = {this.state.error} deleteItem = {this.deleteItem} />
+
+          <p>{this.state.error}</p>
+          {this.state.items.length > 0 && 
+                <Weather items = {this.state.items} deleteItem = {this.deleteItem}/>
+            }
           <Lesson4 getTextFunc = {this.getSomeText}/>
           <SomeText some_text = {this.state.some_text}/>
 
-          <RegisterForm
+          {this.state.isAgree === false ? (
+            <RegisterForm
            role = {this.state.role}
            onChange = {this.OnChange}
            onSelect = {this.OnSelect}
@@ -143,22 +147,7 @@ class WeatherApp extends React.Component{
            email = {this.state.email}
            options = {this.state.options}
            />
-
-        </div>
-      );  
-    }
-    else{
-      return(
-        <div className = "main-div">
-          <About/>
-          <Form gettingData = {this.getData} />
-          <br/>
-          <Items items = {this.state.items} error = {this.state.error} deleteItem = {this.deleteItem} />
-          <Lesson4 getTextFunc = {this.getSomeText}/>
-          <SomeText some_text = {this.state.some_text}/>
-
-
-          <br/>
+          ) : (
           <SuccessRegister 
             role = {this.state.role}
             email = {this.state.email}
@@ -166,9 +155,9 @@ class WeatherApp extends React.Component{
             OnChange = {this.OnChange}
             isAgree = {this.state.isAgree}
           />
+          )}
         </div>
       );  
-    }  
   }
 }
 export default WeatherApp;

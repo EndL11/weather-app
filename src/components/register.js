@@ -5,7 +5,7 @@ const RegisterForm = props => {
         <option key={k} value = {el}>{el}</option>
     ));
     return(
-        <div>
+        <div style={{paddingBottom: "30px", marginBottom: "20px"}}>
             <form>
                 Email: <input type="text" name="email" value={props.email} onChange={props.onChange}/><br/>
                 Пароль: <input type="password" name="password" value={props.password} onChange={props.onChange}/><br/>
