@@ -1,12 +1,7 @@
 import React from 'react';
 import './App.css';
-import Form from "./components/form";
-import About from "./components/about";
-import Lesson4 from "./components/lesson4";
-import SomeText from "./components/some_text";
-import Items from "./components/items";
-import RegisterForm from "./components/register";
-import SuccessRegister from "./components/successRegister";
+
+import {About, Lesson4, SomeText, Form, Items, RegisterForm, SuccessRegister} from "./components";
 
 const API_KEY = "3042b9bfd374130956c1e55d218c8156";
 
@@ -98,8 +93,7 @@ class WeatherApp extends React.Component{
 
     const data_promise = response.json();
     data_promise.then(res => {
-      console.log(res);
-
+      
       var arr = this.state.items;
       var existItem = arr.find(x => x.id === res.id);
       if(existItem){
