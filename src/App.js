@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import {About, Lesson4, SomeText, Form, RegisterForm, SuccessRegister, Weather} from "./components";
+import {About,Form, Weather} from "./components";
 
 const API_KEY = "3042b9bfd374130956c1e55d218c8156";
 
@@ -10,13 +10,7 @@ class WeatherApp extends React.Component{
     super(props);
 
     this.state = {
-      role: "Аналітик",
-      email: '',
-      password: '',
-      isAgree: false,
-      options: ["Дизайнер", "Аналітик", "Менеджер", "Адміністратор"],
       error: undefined,
-      some_text: "Ваш текст тут!",
       items: []
     }
 
@@ -131,31 +125,10 @@ class WeatherApp extends React.Component{
           <br/>
 
           <p>{this.state.error}</p>
-          {this.state.items.length > 0 && 
-                <Weather items = {this.state.items} deleteItem = {this.deleteItem}/>
-            }
-          <Lesson4 getTextFunc = {this.getSomeText}/>
-          <SomeText some_text = {this.state.some_text}/>
-
-          {this.state.isAgree === false ? (
-            <RegisterForm
-           role = {this.state.role}
-           onChange = {this.OnChange}
-           onSelect = {this.OnSelect}
-           isAgree = {this.state.isAgree}
-           password = {this.state.password}
-           email = {this.state.email}
-           options = {this.state.options}
-           />
-          ) : (
-          <SuccessRegister 
-            role = {this.state.role}
-            email = {this.state.email}
-            password =  {this.state.password}
-            OnChange = {this.OnChange}
-            isAgree = {this.state.isAgree}
-          />
-          )}
+          {
+            this.state.items.length > 0 && 
+              <Weather items = {this.state.items} deleteItem = {this.deleteItem}/>
+          }
         </div>
       );  
   }
