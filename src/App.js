@@ -15,45 +15,7 @@ class WeatherApp extends React.Component{
     }
 
     this.deleteItem = this.deleteItem.bind(this);
-    this.getSomeText = this.getSomeText.bind(this);
     this.getData = this.getData.bind(this);
-    this.OnChange = this.OnChange.bind(this);
-    this.OnSelect = this.OnSelect.bind(this);
-  }
-
-  OnSelect = (e) => {
-    this.setState({
-      role: e.target.value
-    });
-  }
-
-  OnChange = (e) => {
-    if(e.target.type === "checkbox"){
-      this.setState(prevState => ({
-        isAgree: !prevState.isAgree
-      }));
-    }
-    else{
-      const name = e.target.name;
-      const value = e.target.value;
-      this.setState({
-        [name]: value
-      });
-    }
-
-  }
-
-  getSomeText = (e) => {
-    if(e.target.value.split(' ').join('') === "")
-    {
-      this.setState({
-        some_text: "Ваш текст тут!",
-      });
-    }else{
-      this.setState({
-        some_text: e.target.value,
-      });
-    }
   }
 
   deleteItem = (id) => {
