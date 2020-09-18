@@ -32,7 +32,7 @@ class WeatherApp extends React.Component{
     if(e.target.elements.city.value.split(' ').join('') === "")
     {
       this.setState({
-        error: "Город не найден или введен не верно!",
+        error: "Місто не знайдено або невірно введені дані!",
       });
       return;
     }
@@ -42,7 +42,7 @@ class WeatherApp extends React.Component{
     let response = await fetch(url_api);
     if(!response.ok){
       this.setState({
-        error: "Город не найден или введен не верно!"
+        error: "Місто не знайдено або невірно введені дані!"
       });
       return;
     }
@@ -54,7 +54,7 @@ class WeatherApp extends React.Component{
       var existItem = arr.find(x => x.id === res.id);
       if(existItem){
         this.setState({
-          error: "Город уже добавлен."
+          error: "Місто вже додано."
         });
         return;
       }
